@@ -1,0 +1,5 @@
+var archivo = "datos.txt";
+
+print("Iniciando proceso de copia") 
+
+copy_file(archivo, "backup.txt");

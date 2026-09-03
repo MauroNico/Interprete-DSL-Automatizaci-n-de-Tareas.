@@ -1,0 +1,10 @@
+var objetivo = "reporte.txt";
+var cantidad = "diez"; 
+
+create_file(objetivo);
+print("Archivo creado. Iniciando iteraciones...");
+
+repeat(cantidad) {
+    print("Verificando permisos...");
+    wait(1);
+}

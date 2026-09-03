@@ -1,0 +1,17 @@
+# Archivos compilados
+*.o
+*.exe
+*.out
+
+# Directorio de objetos
+obj/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Directorio temporal
+-p/

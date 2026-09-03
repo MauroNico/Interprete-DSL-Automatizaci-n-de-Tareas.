@@ -1,0 +1,27 @@
+print("--- Inicio prueba ---");
+
+var archivo_origen = "log_temporal.txt";
+var archivo_copia = "respaldo_log.txt";
+
+create_file(archivo_origen);
+
+if (exists(archivo_origen)) {
+    print("El archivo origen existe. Esperando para copiar...");
+    wait(5000);
+    copy_file(archivo_origen, archivo_copia);
+} else {
+    print("Error: El archivo no se pudo crear.");
+}
+
+print("Iniciando bucle de comprobacion:");
+var bucles = 3;
+repeat(bucles) {
+    print("Verificando integridad...");
+    wait(2500);
+}
+
+print("Modificando variable para limpiar...");
+archivo_origen = "respaldo_log.txt";
+delete_file(archivo_origen);
+
+print("--- fin ---");

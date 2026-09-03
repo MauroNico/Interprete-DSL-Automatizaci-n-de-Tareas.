@@ -1,0 +1,9 @@
+var log_path = "/var/logs/old.log";
+
+if (exists(log_path)) {
+    copy_file(log_path, "/backup/old.log");
+    delete_file(log_path);
+}
+else {
+    print("El log no existe");
+}
