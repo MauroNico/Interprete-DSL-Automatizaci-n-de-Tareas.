@@ -21,9 +21,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@if not exist $(OBJ_DIR) mkdir $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# limpieaza para windows cmd
+# limpieza para windows cmd
 clean:
 	@if exist $(OBJ_DIR) rmdir /s /q $(OBJ_DIR)
 	@if exist $(EXECUTABLE) del /q $(EXECUTABLE)
 
-.PHONY: all clean
+run: $(EXECUTABLE)
+	./$(EXECUTABLE) ejemplos/script_completo.txt
+
+.PHONY: all clean run

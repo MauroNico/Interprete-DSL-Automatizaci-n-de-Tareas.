@@ -17,16 +17,17 @@ enum TokenType {
 struct Token {
     TokenType type;
     std::string lexeme;
+    int line;
 };
 
 class Lexer {
 private:
     std::string code;
     size_t pos;
-    int line; // checkea linea
+    int line;
 
 public:
-    Lexer(std::string source);
+    Lexer(const std::string& source);
     Token getNextToken();
     int getLine() const { return line; } 
 };

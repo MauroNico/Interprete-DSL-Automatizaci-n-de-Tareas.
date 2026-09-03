@@ -13,6 +13,7 @@ private:
     Token currentToken;
 
     void eat(TokenType expected);
+    std::string parseExpression();
 
     std::unique_ptr<ASTNode> parseStatement();
     std::unique_ptr<VarDeclNode> parseVariableDecl();
@@ -23,7 +24,7 @@ private:
     std::unique_ptr<ConditionNode> parseCondition(); 
 
 public:
-    Parser(std::string source);
+    Parser(const std::string& source);
     std::unique_ptr<ProgramNode> parseProgram();
 };
 

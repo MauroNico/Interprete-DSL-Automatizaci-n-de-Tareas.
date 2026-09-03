@@ -19,7 +19,7 @@ class VarDeclNode : public ASTNode {
     std::string identifier;
     std::string expression;
 public:
-    VarDeclNode(std::string id, std::string expr);
+    VarDeclNode(const std::string& id, const std::string& expr);
     void execute(SymbolTable& symTable) override;
 };
 
@@ -28,7 +28,7 @@ class AssignmentNode : public ASTNode {
     std::string identifier;
     std::string expression;
 public:
-    AssignmentNode(std::string id, std::string expr);
+    AssignmentNode(const std::string& id, const std::string& expr);
     void execute(SymbolTable& symTable) override;
 };
 
@@ -36,7 +36,7 @@ class CommandCallNode : public ASTNode {
     std::string commandName;
     std::vector<std::string> arguments;
 public:
-    CommandCallNode(std::string cmd, std::vector<std::string> args);
+    CommandCallNode(const std::string& cmd, std::vector<std::string> args);
     void execute(SymbolTable& symTable) override;
 };
 
@@ -51,7 +51,7 @@ class RepeatNode : public ASTNode {
     std::string iterations;
     std::unique_ptr<ASTNode> body;
 public:
-    RepeatNode(std::string iters, std::unique_ptr<ASTNode> bodyNode);
+    RepeatNode(const std::string& iters, std::unique_ptr<ASTNode> bodyNode);
     void execute(SymbolTable& symTable) override;
 };
 
@@ -60,7 +60,7 @@ class ConditionNode {
     std::string leftExpr;
     std::string rightExpr;
 public:
-    ConditionNode(std::string op, std::string left, std::string right);
+    ConditionNode(const std::string& op, const std::string& left, const std::string& right);
     bool evaluate(SymbolTable& symTable);
 };
 
